@@ -1,3 +1,3 @@
 Hello and thank you for checking out the Pollak Vineyards Interactive Map! This is still in production mode (have't run npm build yet) because there will likely be some upgrades and optimization.
-Right now, the photos are taking a while to load because of file size, and remove hosting - will need to bring them into Public or Assests folder locally.
+Right now, the photos are taking a while to load because of file size, and remote hosting - will need to bring them into Public or Assests folder locally.
 Eventually this is planned to be embedded in an iFrame, and will probably need to be a different shape to see the whole thing on a phone screen....
