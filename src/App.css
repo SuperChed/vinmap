@@ -1,38 +1,579 @@
-.App {
+body {
   text-align: center;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+#range {
+  position: relative;
+  width: 600px;
+  height: 500px;
+  margin: auto;
+}
+#main-vineyard {
+  position: relative;
+  width: 600px;
+  height: 500px;
+  margin: auto;
+  overflow: hidden;
+  background-image: url('https://websnoot.com/vineyard-map/map_back_together.png');
+  background-position: 40% 45%;
+ /* background-image: url('https://websnoot.com/vineyard-map/vin.png'); */ 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.show {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-color: wheat;
+  overflow: scroll;
+}
+.hide{
+  display: none;
+}
+#close-btn {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  display: block;
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 15px;
+  float: left;
+  margin: 10px;
+  font-size: 18px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+.control {
+  display: inline-block;
+  width: 95%;
+  margin-bottom: -10px;
+  background-color: wheat;
+}
+.control img {
+  width: 30px;
+  height: 30px;
+}
+.prev {
+  float: left;
+  padding: 5px;
+  cursor: pointer;
+}
+.prev span {
+  position: relative;
+  top: -9px;
+  left: -6px;
+}
+.next {
+  float: right;
+  padding: 5px;
+  cursor: pointer;
+}
+.next span {
+  position: relative;
+  top: -10px;
+  left: 6px;
+}
+.background {
+  padding: 10px;
+  background-color: lightgray;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.grapes{
+  position: absolute;
+  z-index: 0;
+  bottom:0px;
+  left: 10px;
+  height: auto;
+  width: 280px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: wheat;
+  justify-content: center;
+}
+.grapeBtn {
+  display: inline-block;
+  font-size: 14px;
+  width: auto;
+  height: 16px;
+  padding: 2px;
+  background-color: lightgreen;
+  border-radius: 4px;
+  margin: 5px;
+  cursor: pointer;
+}
+#blockTxt {
+  width: 40%;
+  float: left;
+  height: auto;
+  text-align: right;
+}
+#blockImg {
+  width: 50%;
+  height: auto;
+  float: right;
+  margin-right: 25px;
+  margin-top: 15px;
+}
+#copy {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  right: 8px;
+  background-color: wheat;
+  width: auto;
+  height: 15px;
+  font-size: 8px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* STYLING AND POSITION FOR EACH BLOCK  */
+/* naming convention is block.varietal+block.id */
+#Pinot-Gris0 {
+position: absolute;
+display: block;
+border-radius: 4px;
+opacity: 0.5;
+cursor: pointer;
+background-color: green;
+  
+width: 50px;
+height: 130px;
+right: 115px;
+bottom: 10px;
+}
+#Pinot-Gris0::after {
+  content: "";
+	background-color: inherit;
+	position: absolute;
+	width: 30px;
+	height: 60px;
+	top: 55px;
+	left: -17px;
+	transform: skew(10deg);
+}
+
+/* TEN-ACRE BLOCK  */
+#Merlot1 {
+  position: absolute;
+display: block;
+border-radius: 4px;
+opacity: 0.5;
+cursor: pointer;
+background-color: green;
+			right: 174px;
+			top: 210px;
+			width: 18px;
+			height: 132px;
+			transform: rotate(-22deg);  
+}
+#Cabernet-Franc2 {
+  position: absolute;
+display: block;
+border-radius: 4px;
+opacity: 0.5;
+cursor: pointer;
+background-color: green;
+			right: 153px;
+			top: 204px;
+			width: 18px;
+			height: 131px;
+			transform: rotate(-22deg);   
+}
+#Petit-Verdot3 {
+  position: absolute;
+display: block;
+border-radius: 4px;
+opacity: 0.5;
+cursor: pointer;
+background-color: green;
+      right: 132px;
+			top: 199px;
+			width: 18px;
+			height: 130px;
+			transform: rotate(-22deg);  
+}
+#Pinot-Gris4 {
+  position: absolute;
+display: block;
+border-radius: 4px;
+opacity: 0.5;
+cursor: pointer;
+background-color: green;
+			right: 110px;
+			top: 193px;
+			width: 18px;
+			height: 130px;
+			transform: rotate(-22deg);  
+}
+#Cabernet-Franc5 {
+  position: absolute;
+display: block;
+border-radius: 4px;
+opacity: 0.5;
+cursor: pointer;
+background-color: green;
+			right: 52px;
+			top: 185px;
+			width: 55px;
+			height: 128px;
+			transform: rotate(-17deg) skew(5deg);  
+}
+#Chardonnay6 {
+  position: absolute;
+display: block;
+border-radius: 4px;
+opacity: 0.5;
+cursor: pointer;
+background-color: green;
+			right: -5px;
+			top: 170px;
+			width: 55px;
+			height: 127px;
+			transform: rotate(-17deg) skew(5deg);    
+}
+
+/* VIO BLOCK IS JUST RIGHT BORDER TO MAKE TRIANGLE */
+		#Viognier7 {
+      position: absolute;
+			right: 120px;
+			top: 78px;
+			width: 1px; 
+  		height: 1px; 
+  		transform: rotate(-12deg);
+ 			border-top: 90px solid transparent;
+  		border-right: 150px solid green;
+  		opacity: 0.5;
+  		cursor: pointer;
+		}
+      /*
+      #Viognier7::after {
+				content: "";
+				position: absolute;
+				top: -2px;
+				left: 1px;
+				width: 150px;
+				height: 22px;
+				background-color: green;
+				transform: rotate(-2deg);
+			}	
+      */
+
+#Sauvignon-Blanc8 {
+  position: absolute;
+display: block;
+border-radius: 4px;
+opacity: 0.5;
+cursor: pointer;
+background-color: green;
+			top: 225px;
+			right: 204px;
+			height: 112px;
+			width: 47px;
+			transform: skew(10deg) rotate(-12deg);  
+}
+
+/* NEW BLOCK  */
+#Nebbiolo9 {
+position: absolute;
+display: block;
+border-radius: 4px;
+opacity: 0.5;
+cursor: pointer;
+background-color: green;
+			top: 108px;
+			left: 240px;
+			width: 45px;
+      height: 50px;
+}
+#Sauvignon-Blanc10 {
+  position: absolute;
+display: block;
+border-radius: 4px;
+opacity: 0.5;
+cursor: pointer;
+background-color: green;
+			top: 102px;
+			left: 290px;
+			    /* transform: skew(5deg) rotate(-15deg); */
+			height: 55px;    
+			width: 20px;  
+}
+#Nebbiolo11 {
+position: absolute;
+display: block;
+border-radius: 4px;
+opacity: 0.5;
+cursor: pointer;
+background-color: green;
+			top: 55px;
+			left: 240px;
+			width: 45px;
+      height: 50px;
+}
+#Sauvignon-Blanc12 {
+position: absolute;
+display: block;
+border-radius: 4px;
+opacity: 0.5;
+cursor: pointer;
+background-color: green;
+      top: 37px;
+			left: 290px;
+			height: 60px;
+			width: 20px;
+}
+
+/* MOUNTAIN BLOCK  */
+#Merlot13 {
+  position: absolute;
+display: block;
+border-radius: 4px;
+opacity: 0.5;
+cursor: pointer;
+			top: 84px;
+			left: 79px;
+			width: 80px;
+			height: 10px;
+			background-color: green;
+			transform: rotate(-10deg);  
+}
+#Chardonnay14 {
+  position: absolute;
+display: block;
+border-radius: 4px;
+opacity: 0.5;
+cursor: pointer;
+background-color: green;
+			top: 70px;
+			left: 164px;
+			width: 72px;
+			height: 10px;
+			transform: rotate(-12deg);  
+}
+#Cabernet-Franc15 {
+  position: absolute;
+display: block;
+border-radius: 4px;
+opacity: 0.5;
+cursor: pointer;
+background-color: green;
+			top: 97px;
+			left: 79px;
+			width: 83px;
+			height: 10px;
+			transform: rotate(-10deg);  
+}
+  #Cabernet-Franc15::after {
+				content: "";
+				position: absolute;
+				top: 0px;
+				left: 89px;
+				width: 68px;
+				height: 10px;
+				border-radius: 4px;
+				background-color: inherit;
+				transform: rotate(-2deg);
+			}
+#Petit-Verdot16 {
+  position: absolute;
+display: block;
+border-radius: 4px;
+opacity: 0.5;
+cursor: pointer;
+background-color: green;
+			top: 109px;
+			left: 81px;
+			width: 84px;
+			height: 10px;
+			transform: rotate(-10deg);  
+}
+#Petit-Verdot17 {
+  position: absolute;
+display: block;
+border-radius: 4px;
+opacity: 0.5;
+cursor: pointer;
+background-color: green;
+			top: 95px;
+			left: 172px;
+			width: 62px;
+			height: 22px;
+			transform: rotate(-12deg);  
+}
+#Petit-Manseng18 {
+  position: absolute;
+display: block;
+border-radius: 4px;
+opacity: 0.5;
+cursor: pointer;
+background-color: green;
+			top: 121px;
+			left: 82px;
+			width: 85px;
+			height: 10px;
+			transform: rotate(-10deg);  
+}
+
+/* SMUGGLER BLOCK  */
+#Cabernet-Franc19 {
+  position: absolute;
+display: block;
+border-radius: 4px;
+opacity: 0.5;
+cursor: pointer;
+background-color: green;
+			top: 152px;
+			left: 66px;
+			width: 20px;
+			height: 140px;
+			transform: skew(40deg, -19deg) rotate(7deg);
+			border-radius: 4px;  
+}
+#Cabernet-Sauvignon20 {
+  position: absolute;
+display: block;
+border-radius: 4px;
+opacity: 0.5;
+cursor: pointer;
+background-color: green;
+			top: 150px;
+			left: 92px;
+			width: 22px;
+			height: 135px;
+			transform: skew(40deg, -19deg) rotate(7deg);
+			border-radius: 4px;  
+}
+#Merlot21 {
+  position: absolute;
+display: block;
+border-radius: 4px;
+opacity: 0.5;
+cursor: pointer;
+background-color: green;
+			top: 160px;
+			left: 118px;
+			width: 24px;
+			height: 100px;
+			transform: skew(40deg, -19deg) rotate(7deg);
+			border-radius: 4px;  
+}
+
+#Merlot22 {
+  position: absolute;
+display: block;
+border-radius: 4px;
+opacity: 0.5;
+cursor: pointer;
+background-color: green;
+			top: 272px;
+			left: -3px;
+			height: 70px;
+			width: 51px;
+			transform: skew(40deg, -10deg) rotate(-26deg);  
+}
+  #Merlot22::after {
+				content: "";
+				position: absolute;
+				top: 67px;
+				left: 22px;
+				background-color: inherit;
+				height: 14px;
+				width: 30px;	
+			}
+#Merlot23 {
+position: absolute;
+display: block;
+border-radius: 4px;
+opacity: 0.5;
+cursor: pointer;
+background-color: green;
+			top: 232px;
+			left: 33px;
+			height: 95px;
+			width: 30px;
+			transform: skew(40deg, -10deg) rotate(-26deg);  
+  
+}
+
+#Petit-Manseng24 {
+  position: absolute;
+display: block;
+border-radius: 4px;
+opacity: 0.5;
+cursor: pointer;
+background-color: green;
+			bottom: 85px;
+			left: 130px;
+			height: 97px;
+			width: 17px;
+			transform: rotate(-58deg);  
+}
+
+
+/* STYLING FOR BUILDINGS AND INFO  */
+/* info.nameLower + info.id  */
+#main-info {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  
+}
+.info-header {
+  margin: 10px auto;
+  width: 75%;
+  height: auto;
+}
+.info-links {
+  padding: 5px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 200px;
+  height: auto;
+  margin: auto;
+}
+  .info-links a {
+    padding: 10px;
+  }
+footer img {
+  width: 40%;
+  height: auto;
+  margin: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+#smuggler-block25 {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  top: 80px;
+  left: 4px;
+  width: 40px;
+  height: 40px;
+}
+#farm-history26 {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  top: 130px;
+  left: 160px;
+  width: 40px;
+  height: 40px;
+}
+#tasting-room27 {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  top: 345px;
+  left: 350px;
+  width: 40px;
+  height: 40px;  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
