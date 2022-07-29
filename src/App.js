@@ -1,8 +1,6 @@
 
 import './App.css';
-
 import React from 'react';
-
 
 
 const { useState } = React;
@@ -300,7 +298,7 @@ soilType: "Clay",
 picUrl: "https://websnoot.com/vineyard-map/h0.jpg",  
 },
 {
- id: 24,
+id: 24,
 name: "I Block",
 varietal: "Petit-Manseng",
 clones: "TCVSA-573",
@@ -310,11 +308,23 @@ elevation:", 780-810ft.",
 yearsPlanted:", 2014, 2018",
 soilType: "Clay",
 picUrl: "https://websnoot.com/vineyard-map/pm0.jpg",  
+},
+{
+id: 25,
+name: "New Block",
+varietal: "Sauvignon-Gris",
+acreage: "1",
+yearsPlanted: "(2022)",
+elevation: "850ft",
+clones: "6, 8",
+rootstock: "420A",
+soilType: "Clay",
+picUrl: "https://websnoot.com/vineyard-map/dnew0.jpg",  
 }
 ];
 const infos = [
   {
-    id: 25,
+    id: 26,
     nameLower: "smuggler-block",
     name: "Smuggler Block",
     icon: "https://img.icons8.com/wired/64/46014D/grapes--v2.png",
@@ -324,21 +334,21 @@ const infos = [
     fImgSrc2: "https://websnoot.com/vineyard-map/history1.jpg",
   },
   {
-    id: 26,
+    id: 27,
     nameLower: "farm-history",
     name: "Farm History",
     icon: "https://img.icons8.com/wired/64/b55304/school.png",
-    body: <div><p>There has been farming on this location for over 100 years! Around the turn of the century, William Allwood had a 500-acre farm centered here, with a very large orchard operation. During this time, Allwood was teaching entomology at the Virginia Polytechnic Institute (now Virginia Tech). He developed the first spray-program for orchards in America, and applied his new technology to the orchard here.</p><p>There was also a very famous railroad tunnel being built up the hill at the time. The workers were mostly Irish, and were known to have lived and camped along the edges of the farm property. Through the years, this location has also been a horse and hog farm, and organic vegetable farm.</p><p>In 2003, when David and Margo Pollak bought the property, they had carefully chosen this location to start their new vineyard. The first vines were planted in 2003, and our first vintage was a 2005 Meritage. The Pollak team continues to make award winning estate-grown wines here, and this beautiful farm is a lovely reminder of our incredible agricultural history. Thank you for learning about our vineyard!</p></div>,
+    body: <div id="inner-text"><p>There has been farming on this location for over 100 years! Around the turn of the century, William Allwood had a 500-acre farm centered here, with a very large orchard operation. During this time, Allwood was teaching entomology at the Virginia Polytechnic Institute (now Virginia Tech). He developed the first spray-program for orchards in America, and applied his new technology to the orchard here.</p><p>There was also a very famous railroad tunnel being built up the hill at the time. The workers were mostly Irish, and were known to have lived and camped along the edges of the farm property. Through the years, this location has also been a horse and hog farm, and organic vegetable farm.</p><p>In 2003, when David and Margo Pollak bought the property, they had carefully chosen this location to start their new vineyard. The first vines were planted in 2003, and our first vintage was a 2005 Meritage. The Pollak team continues to make award winning estate-grown wines here, and this beautiful farm is a lovely reminder of our incredible agricultural history. Thank you for learning about our vineyard!</p></div>,
     hImgSrc: "https://websnoot.com/vineyard-map/vineyardtop.png",
     fImgSrc1: "https://websnoot.com/vineyard-map/barn1.jpg",
     fImgSrc2: "https://websnoot.com/vineyard-map/barn0.jpg",
   },
   {
-    id: 27,
+    id: 28,
     nameLower: "tasting-room",
     name: "Tasting Room",
     icon: "https://img.icons8.com/wired/64/000000/shop.png",
-    body: <div><p>Our tasting room is open Wednesday through Sunday from 12-5pm. Stop in to learn more about our winery, and try some amazing estate-grown wines! We can also ship to most states, so check out our online store if you can't make it out here soon.</p><p>The winery where we produce all of our wines is located behind the tasting room. We utilize small-lot fermintation to achieve ballance and complexity. Our cellar is under the tasting room, and offers a variety of aging mediums from French-oak to concrete.</p></div>,
+    body: <div id="inner-text"><p>Our tasting room is open Wednesday through Sunday from 12-5pm. Stop in to learn more about our winery, and try some amazing estate-grown wines! We can also ship to most states, so check out our online store if you can't make it out here soon.</p><p>The winery where we produce all of our wines is located behind the tasting room. We utilize small-lot fermintation to achieve ballance and complexity. Our cellar is under the tasting room, and offers a variety of aging mediums from French-oak to concrete.</p></div>,
     link1: 'http://www.pollakvineyards.com',
     link2: 'https://vinoshipper.com/shop/pollak_vineyards?list=',
     link3: 'http://www.pollakvineyards.com/wines/wine-club/',
@@ -353,6 +363,11 @@ const Block = ({state, func, prev, next, close}) => {
   
   return ( 
     <div id='main-vineyard'> 
+
+        <div id="copy">
+          Built by <a href="https://websnoot.com" target="_blank">Websnoot</a>
+        </div>
+
         {blocks.map((block, index) => ( 
       
         <div id={block.id} key={block.id}>
@@ -370,7 +385,7 @@ const Block = ({state, func, prev, next, close}) => {
         <div id={block.name} className={state === block.id ? "show" : "hide"} > 
         <br />
           <div id="close-btn" onClick={close}>X</div>  
-        <img id="headerImg" src="https://websnoot.com/vineyard-map/vineyardtop.png"  alt="winery" width="70%" height="70" />
+        <img id="headerImg" src="https://websnoot.com/vineyard-map/vineyardtop.png"  alt="winery" width="60%" height="70" />
           
           <div className = "control">
             <div className = "prev" onClick={prev}>
@@ -401,9 +416,7 @@ const Block = ({state, func, prev, next, close}) => {
           <img src={block.picUrl} alt="vineyard pic" id="blockImg"/> 
           
        </div>
-          <div id="copy">
-            Copyright 2022 <a href="https://websnoot.com" target="_blank">Websnoot</a>
-          </div>
+          
       </div>  
       ))}
    
@@ -471,10 +484,11 @@ const Grapes = ({me}) => {
       <div className="grapeBtn" title='Viognier' onClick={me}>Viognier</div>
       <div className="grapeBtn" title='Petit-Verdot' onClick={me}>Petit Verdot</div>
       <div className="grapeBtn" title='Sauvignon-Blanc' onClick={me}>Sauv Blanc</div>
+      <div className="grapeBtn" title='Sauvignon-Gris' onClick={me}>Sauv Gris</div>
       <div className="grapeBtn" title='Pinot-Gris' onClick={me}>Pinot Gris</div>
       <div className="grapeBtn" title='Nebbiolo' onClick={me}>Nebbiolo</div>
       <div className="grapeBtn" title='Chardonnay' onClick={me}>Chardonnay</div>
-      <div className="grapeBtn" title='Petit-Manseng' onClick={me}>Petit-Manseng</div>
+      <div className="grapeBtn" title='Petit-Manseng' onClick={me}>Petit Manseng</div>
     </div>
     
   );
@@ -489,6 +503,8 @@ const Vineyard = () => {
     const clickHandle = (blockId, blockName) => {
      if (state != blockId) {
        setState(blockId);
+     } else if (state === blockId) {
+       setState(0);
      } else {
        setState(0);
      }
@@ -529,11 +545,9 @@ const Vineyard = () => {
 
   };
   
-  //rewrite this function to accept parameter as arg
-  //and pass that grape to queryselector as a variable
-  //rename function to findVarietal or findGrape 
+ 
+  
   function findVarietal(e) {
-    //query elements matching 'merlot' ...for now
   //let cluster = document.querySelectorAll('[name="Merlot"]');
     let hit = e.target.title;
     console.log(hit);
@@ -542,18 +556,18 @@ const Vineyard = () => {
       console.log(cluster);
     //apply className='on' to each
     cluster.forEach((grape)=>{
-    if (grape.id=='Viognier7' && grape.style.borderRight!='150px solid red') {
-      grape.style.borderRight = '150px solid red';
-    }else if (grape.id=='Viognier7' && grape.style.borderRight!='150px solid green') {
-      grape.style.borderRight = '150px solid green';
-    }else if (grape.style.backgroundColor !='orangered' && grape.id!='Viognier7') {
-      grape.style.backgroundColor='orangered';
+    if (grape.id=='Viognier7' && grape.style.borderRight!='180px solid yellow') {
+      grape.style.borderRight = '180px solid yellow';
+    }else if (grape.id=='Viognier7' && grape.style.borderRight!='180px solid green') {
+      grape.style.borderRight = '180px solid green';
+    }else if (grape.style.backgroundColor !='yellow' && grape.id!='Viognier7') {
+      grape.style.backgroundColor='yellow';
     }else if (grape.style.backgroundColor!='green' && grape.id!='Viognier7'){
       grape.style.backgroundColor='green';
     }
     });
-    if (e.target.style.backgroundColor !='orangered') {
-      e.target.style.backgroundColor='orangered';
+    if (e.target.style.backgroundColor !='yellow') {
+      e.target.style.backgroundColor='yellow';
     }else{
       e.target.style.backgroundColor='lightgreen';
     };
@@ -562,10 +576,13 @@ const Vineyard = () => {
       
   function close(e) {
      e.target.parentNode.className = "hide";
+     setState(null);
   }    
   
   return (
     <div id="range">
+      <div id="pond"></div>
+      <div id="logo"></div>
       <Block state={state} func={clickHandle} prev={prevClick} next={nextClick} me={findVarietal} close={close} />
       <Grapes me={findVarietal} />
     </div>  
@@ -579,10 +596,7 @@ const Vineyard = () => {
 
 function App() {
   return (
-  
     <Vineyard />
-
   );
 }
-
 export default App;
