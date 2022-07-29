@@ -1,27 +1,41 @@
+
+
+/* ONLY SHOWS IN PORTRAIT MODE */
+#tooSmall {
+  display: none;
+  font-size: 30px;
+  margin-top: 50px;
+}
+
+
 body {
   text-align: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Sarabun', sans-serif;
   margin: 0;
-  background: rgb(163,222,130);
-  background: radial-gradient(circle, rgba(163,222,130,1) 64%, rgba(255,232,109,1) 100%);
+  background: whitesmoke;
+  /* background: rgb(163,222,130);
+  background: radial-gradient(circle, rgba(163,222,130,1) 64%, rgba(255,232,109,1) 100%); */
 }
 #range {
   position: relative;
-  width: 600px;
-  height: 500px;
+  width: 680px;
+  height: 350px;
   margin: auto;
-  top: 40px;
+  margin-top: 5px;
 }
 #main-vineyard {
-  position: relative;
-  width: 600px;
-  height: 500px;
+  position: relative; 
+  width: inherit;
+  height: inherit;
   margin: auto;
   overflow: hidden;
-  background-image: url('https://websnoot.com/vineyard-map/map_back_together.png');
-  background-position: 40% 45%;
- /* background-image: url('https://websnoot.com/vineyard-map/vin.png'); */ 
   border-radius: 12px;
+  background-color: #d5f5a1;
+    /* background-image: url('https://websnoot.com/vineyard-map/new_background.png');
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('https://websnoot.com/vineyard-map/vin.png');  */
 }
 
 .show {
@@ -44,6 +58,7 @@ body {
   left: 8px;
   display: block;
   text-align: center;
+  line-height: 20px;
   width: 20px;
   height: 20px;
   border-radius: 15px;
@@ -51,13 +66,17 @@ body {
   margin: 10px;
   font-size: 18px;
   background-color: black;
-  color: white;
+  color: tan;
   cursor: pointer;
 }
+
 .control {
+  position: relative;
+  top: -40px;
+  z-index: -1;
   display: inline-block;
   width: 95%;
-  margin-bottom: -10px;
+  margin-bottom: -30px;
   background-color: wheat;
 }
 .control img {
@@ -93,25 +112,27 @@ body {
   position: absolute;
   z-index: 0;
   bottom:0px;
-  left: 10px;
-  height: auto;
-  width: 280px;
+  left: 0px;
+  height: 70px;
+  width: 450px;
   border-radius: 6px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   background-color: wheat;
   justify-content: center;
+  align-items: center;
 }
 .grapeBtn {
   display: inline-block;
   font-size: 14px;
   width: auto;
   height: 16px;
-  padding: 2px;
+  padding: 0px 4px 4px 4px;
   background-color: lightgreen;
   border-radius: 4px;
-  margin: 5px;
+  margin-left: 5px;
+  margin-bottom: 0px;
   cursor: pointer;
 }
 #blockTxt {
@@ -119,6 +140,7 @@ body {
   float: left;
   height: auto;
   text-align: right;
+  margin: -10px 0px 0px 15px;
 }
 #blockImg {
   width: 50%;
@@ -131,129 +153,128 @@ body {
   display: inline-block;
   position: absolute;
   bottom: 0;
-  right: 8px;
-  background-color: wheat;
+  right: 35px;
+  background-color: rgb(198, 242, 167);
   width: auto;
-  height: 15px;
-  font-size: 8px;
+  height: 10px;
+  font-size: 6px;
 }
 
 /* STYLING AND POSITION FOR EACH BLOCK  */
 /* naming convention is block.varietal+block.id */
 #Pinot-Gris0 {
-position: absolute;
-display: block;
-border-radius: 4px;
-opacity: 0.5;
-cursor: pointer;
-background-color: green;
-  
-width: 50px;
-height: 130px;
-right: 115px;
-bottom: 10px;
+  position: absolute;
+  display: block;
+  border-radius: 4px;
+  opacity: 0.5;
+  cursor: pointer;
+  background-color: green;
+    width: 70px;
+    height: 110px;
+    right: 120px;
+    bottom: 0px;
 }
 #Pinot-Gris0::after {
   content: "";
 	background-color: inherit;
 	position: absolute;
-	width: 30px;
-	height: 60px;
-	top: 55px;
-	left: -17px;
-	transform: skew(10deg);
+    width: 30px;
+    height: 60px;
+    top: 49px;
+    left: -17px;
+    transform: skew(10deg);
 }
 
 /* TEN-ACRE BLOCK  */
 #Merlot1 {
   position: absolute;
-display: block;
-border-radius: 4px;
-opacity: 0.5;
-cursor: pointer;
-background-color: green;
-			right: 174px;
-			top: 210px;
+  display: block;
+  border-radius: 4px;
+  opacity: 0.5;
+  cursor: pointer;
+  background-color: green;
+			right: 200px;
+			top: 113px;
 			width: 18px;
-			height: 132px;
+			height: 120px;
 			transform: rotate(-22deg);  
 }
 #Cabernet-Franc2 {
   position: absolute;
-display: block;
-border-radius: 4px;
-opacity: 0.5;
-cursor: pointer;
-background-color: green;
-			right: 153px;
-			top: 204px;
+  display: block;
+  border-radius: 4px;
+  opacity: 0.5;
+  cursor: pointer;
+  background-color: green;
+			right: 180px;
+			top: 107px;
 			width: 18px;
-			height: 131px;
+			height: 120px;
 			transform: rotate(-22deg);   
 }
 #Petit-Verdot3 {
   position: absolute;
-display: block;
-border-radius: 4px;
-opacity: 0.5;
-cursor: pointer;
-background-color: green;
-      right: 132px;
-			top: 199px;
+  display: block;
+  border-radius: 4px;
+  opacity: 0.5;
+  cursor: pointer;
+  background-color: green;
+      right: 160px;
+			top: 100px;
 			width: 18px;
-			height: 130px;
+			height: 120px;
 			transform: rotate(-22deg);  
 }
 #Pinot-Gris4 {
   position: absolute;
-display: block;
-border-radius: 4px;
-opacity: 0.5;
-cursor: pointer;
-background-color: green;
-			right: 110px;
-			top: 193px;
+  display: block;
+  border-radius: 4px;
+  opacity: 0.5;
+  cursor: pointer;
+  background-color: green;
+			right: 140px;
+			top: 93px;
 			width: 18px;
-			height: 130px;
+			height: 120px;
 			transform: rotate(-22deg);  
 }
 #Cabernet-Franc5 {
   position: absolute;
-display: block;
-border-radius: 4px;
-opacity: 0.5;
-cursor: pointer;
-background-color: green;
-			right: 52px;
-			top: 185px;
+  display: block;
+  border-radius: 4px;
+  opacity: 0.5;
+  cursor: pointer;
+  background-color: green;
+			right: 82px;
+			top: 81px;
 			width: 55px;
-			height: 128px;
+			height: 120px;
 			transform: rotate(-17deg) skew(5deg);  
 }
 #Chardonnay6 {
   position: absolute;
-display: block;
-border-radius: 4px;
-opacity: 0.5;
-cursor: pointer;
-background-color: green;
-			right: -5px;
-			top: 170px;
+  display: block;
+  border-radius: 4px;
+  opacity: 0.5;
+  cursor: pointer;
+  background-color: green;
+			right: 25px;
+			top: 64px;
 			width: 55px;
-			height: 127px;
+			height: 120px;
 			transform: rotate(-17deg) skew(5deg);    
 }
 
 /* VIO BLOCK IS JUST RIGHT BORDER TO MAKE TRIANGLE */
 		#Viognier7 {
       position: absolute;
-			right: 120px;
-			top: 78px;
+			right: 75px;
+			top: 8px;
 			width: 1px; 
   		height: 1px; 
-  		transform: rotate(-12deg);
- 			border-top: 90px solid transparent;
-  		border-right: 150px solid green;
+  		transform: rotate(-18deg);
+ 			border-top: 80px solid transparent;
+  		border-right: 180px solid green;
   		opacity: 0.5;
   		cursor: pointer;
 		}
@@ -272,188 +293,201 @@ background-color: green;
 
 #Sauvignon-Blanc8 {
   position: absolute;
-display: block;
-border-radius: 4px;
-opacity: 0.5;
-cursor: pointer;
-background-color: green;
-			top: 225px;
-			right: 204px;
+  display: block;
+  border-radius: 4px;
+  opacity: 0.5;
+  cursor: pointer;
+  background-color: green;
+			top: 128px;
+			right: 228px;
 			height: 112px;
 			width: 47px;
-			transform: skew(10deg) rotate(-12deg);  
+			transform: skew(10deg) rotate(-13deg);  
 }
 
 /* NEW BLOCK  */
 #Nebbiolo9 {
-position: absolute;
-display: block;
-border-radius: 4px;
-opacity: 0.5;
-cursor: pointer;
-background-color: green;
-			top: 108px;
-			left: 240px;
-			width: 45px;
-      height: 50px;
+  position: absolute;
+  display: block;
+  border-radius: 4px;
+  opacity: 0.5;
+  cursor: pointer;
+  background-color: green;
+    top: 72px;
+    left: 290px;
+    width: 55px;
+    height: 50px;
 }
 #Sauvignon-Blanc10 {
   position: absolute;
-display: block;
-border-radius: 4px;
-opacity: 0.5;
-cursor: pointer;
-background-color: green;
-			top: 102px;
-			left: 290px;
-			    /* transform: skew(5deg) rotate(-15deg); */
-			height: 55px;    
-			width: 20px;  
+  display: block;
+  border-radius: 4px;
+  opacity: 0.5;
+  cursor: pointer;
+  background-color: green;
+    top: 75px;
+    left: 350px;
+        /* transform: skew(5deg) rotate(-15deg); */
+    height: 55px;    
+    width: 30px;  
 }
 #Nebbiolo11 {
-position: absolute;
-display: block;
-border-radius: 4px;
-opacity: 0.5;
-cursor: pointer;
-background-color: green;
-			top: 55px;
-			left: 240px;
-			width: 45px;
-      height: 50px;
+  position: absolute;
+  display: block;
+  border-radius: 4px;
+  opacity: 0.5;
+  cursor: pointer;
+  background-color: green;
+    top: 17px;
+    left: 290px;
+    width: 55px;
+    height: 50px;
 }
 #Sauvignon-Blanc12 {
-position: absolute;
-display: block;
-border-radius: 4px;
-opacity: 0.5;
-cursor: pointer;
-background-color: green;
-      top: 37px;
-			left: 290px;
-			height: 60px;
-			width: 20px;
+  position: absolute;
+  display: block;
+  border-radius: 4px;
+  opacity: 0.5;
+  cursor: pointer;
+  background-color: green;
+    top: 10px;
+    left: 350px;
+    height: 60px;
+    width: 30px;
 }
+#Sauvignon-Gris25 {
+  position: absolute;
+  display: block;
+  border-radius: 4px;
+  opacity: 0.5;
+  cursor: pointer;
+  background-color: green;
+    top: 50px;
+    right: 270px;
+    height: 70px;
+    width: 25px;
+}
+
 
 /* MOUNTAIN BLOCK  */
 #Merlot13 {
   position: absolute;
-display: block;
-border-radius: 4px;
-opacity: 0.5;
-cursor: pointer;
-			top: 84px;
-			left: 79px;
-			width: 80px;
-			height: 10px;
-			background-color: green;
-			transform: rotate(-10deg);  
+  display: block;
+  border-radius: 4px;
+  opacity: 0.5;
+  cursor: pointer;
+    top: 24px;
+    left: 110px;
+    width: 87px;
+    height: 15px;
+    background-color: green;
+    transform: rotate(-10deg);  
 }
 #Chardonnay14 {
   position: absolute;
-display: block;
-border-radius: 4px;
-opacity: 0.5;
-cursor: pointer;
-background-color: green;
-			top: 70px;
-			left: 164px;
-			width: 72px;
-			height: 10px;
-			transform: rotate(-12deg);  
+  display: block;
+  border-radius: 4px;
+  opacity: 0.5;
+  cursor: pointer;
+  background-color: green;
+    top: 10px;
+    left: 200px;
+    width: 75px;
+    height: 15px;
+    transform: rotate(-10deg);  
 }
 #Cabernet-Franc15 {
   position: absolute;
-display: block;
-border-radius: 4px;
-opacity: 0.5;
-cursor: pointer;
-background-color: green;
-			top: 97px;
-			left: 79px;
-			width: 83px;
-			height: 10px;
-			transform: rotate(-10deg);  
+  display: block;
+  border-radius: 4px;
+  opacity: 0.5;
+  cursor: pointer;
+  background-color: green;
+    top: 42px;
+    left: 113px;
+    width: 87px;
+    height: 15px;
+    transform: rotate(-10deg);  
 }
   #Cabernet-Franc15::after {
 				content: "";
 				position: absolute;
 				top: 0px;
-				left: 89px;
-				width: 68px;
-				height: 10px;
+				left: 92px;
+				width: 75px;
+				height: 15px;
 				border-radius: 4px;
 				background-color: inherit;
-				transform: rotate(-2deg);
+				transform: rotate(0deg);
 			}
 #Petit-Verdot16 {
   position: absolute;
-display: block;
-border-radius: 4px;
-opacity: 0.5;
-cursor: pointer;
-background-color: green;
-			top: 109px;
-			left: 81px;
-			width: 84px;
-			height: 10px;
-			transform: rotate(-10deg);  
+  display: block;
+  border-radius: 4px;
+  opacity: 0.5;
+  cursor: pointer;
+  background-color: green;
+    top: 60px;
+    left: 115px;
+    width: 90px;
+    height: 15px;
+    transform: rotate(-10deg);  
 }
 #Petit-Verdot17 {
   position: absolute;
-display: block;
-border-radius: 4px;
-opacity: 0.5;
-cursor: pointer;
-background-color: green;
-			top: 95px;
-			left: 172px;
-			width: 62px;
-			height: 22px;
-			transform: rotate(-12deg);  
+  display: block;
+  border-radius: 4px;
+  opacity: 0.5;
+  cursor: pointer;
+  background-color: green;
+    top: 45px;
+    left: 210px;
+    width: 73px;
+    height: 34px;
+    transform: rotate(-10deg);  
 }
 #Petit-Manseng18 {
   position: absolute;
-display: block;
-border-radius: 4px;
-opacity: 0.5;
-cursor: pointer;
-background-color: green;
-			top: 121px;
-			left: 82px;
-			width: 85px;
-			height: 10px;
-			transform: rotate(-10deg);  
+  display: block;
+  border-radius: 4px;
+  opacity: 0.5;
+  cursor: pointer;
+  background-color: green;
+    top: 78px;
+    left: 118px;
+    width: 90px;
+    height: 15px;
+    transform: rotate(-10deg);  
 }
 
 /* SMUGGLER BLOCK  */
 #Cabernet-Franc19 {
   position: absolute;
-display: block;
-border-radius: 4px;
-opacity: 0.5;
-cursor: pointer;
-background-color: green;
-			top: 152px;
-			left: 66px;
-			width: 20px;
-			height: 140px;
-			transform: skew(40deg, -19deg) rotate(7deg);
-			border-radius: 4px;  
+  display: block;
+  border-radius: 4px;
+  opacity: 0.5;
+  cursor: pointer;
+  background-color: green;
+    top: 80px;
+    left: 73px;
+    width: 25px;
+    height: 130px;
+    transform: skew(40deg, -19deg) rotate(7deg);
+    border-radius: 4px;  
 }
 #Cabernet-Sauvignon20 {
   position: absolute;
-display: block;
-border-radius: 4px;
-opacity: 0.5;
-cursor: pointer;
-background-color: green;
-			top: 150px;
-			left: 92px;
-			width: 22px;
-			height: 135px;
-			transform: skew(40deg, -19deg) rotate(7deg);
-			border-radius: 4px;  
+  display: block;
+  border-radius: 4px;
+  opacity: 0.5;
+  cursor: pointer;
+  background-color: green;
+    top: 85px;
+    left: 115px;
+    width: 25px;
+    height: 130px;
+    transform: skew(40deg, -19deg) rotate(7deg);
+    border-radius: 4px;  
 }
 #Merlot21 {
   position: absolute;
@@ -462,13 +496,15 @@ border-radius: 4px;
 opacity: 0.5;
 cursor: pointer;
 background-color: green;
-			top: 160px;
-			left: 118px;
-			width: 24px;
-			height: 100px;
-			transform: skew(40deg, -19deg) rotate(7deg);
-			border-radius: 4px;  
+    top: 120px;
+    left: 168px;
+    width: 25px;
+    height: 100px;
+    transform: skew(40deg, -19deg) rotate(7deg);
+    border-radius: 4px;  
 }
+
+
 
 #Merlot22 {
   position: absolute;
@@ -477,11 +513,11 @@ border-radius: 4px;
 opacity: 0.5;
 cursor: pointer;
 background-color: green;
-			top: 272px;
-			left: -3px;
-			height: 70px;
-			width: 51px;
-			transform: skew(40deg, -10deg) rotate(-26deg);  
+    top: 190px;
+    left: 10px;
+    height: 70px;
+    width: 51px;
+    transform: skew(40deg, -10deg) rotate(-26deg);  
 }
   #Merlot22::after {
 				content: "";
@@ -499,11 +535,11 @@ border-radius: 4px;
 opacity: 0.5;
 cursor: pointer;
 background-color: green;
-			top: 232px;
-			left: 33px;
-			height: 95px;
-			width: 30px;
-			transform: skew(40deg, -10deg) rotate(-26deg);  
+    top: 160px;
+    left: 55px;
+    height: 90px;
+    width: 30px;
+    transform: skew(40deg, -10deg) rotate(-26deg);  
   
 }
 
@@ -514,11 +550,11 @@ border-radius: 4px;
 opacity: 0.5;
 cursor: pointer;
 background-color: green;
-			bottom: 85px;
-			left: 130px;
+			bottom: 50px;
+			left: 190px;
 			height: 97px;
 			width: 17px;
-			transform: rotate(-58deg);  
+			transform: rotate(-75deg);  
 }
 
 
@@ -536,48 +572,106 @@ background-color: green;
   height: auto;
 }
 .info-links {
-  padding: 5px;
   display: flex;
-  flex-direction: column;
-  width: 200px;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 95%;
   height: auto;
   margin: auto;
+  margin-bottom: 10px;
 }
   .info-links a {
     padding: 10px;
+    background-color: black;
+    color: wheat;
+    letter-spacing: 2px;
   }
 footer img {
   width: 40%;
   height: auto;
   margin: 10px;
 }
+#inner-text {
+  padding: 20px;
+}
 
-#smuggler-block25 {
+#smuggler-block26 {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  top: 15px;
+  left: 30px;
+  width: 40px;
+  height: 40px;
+}
+#farm-history27 {
   position: absolute;
   display: block;
   cursor: pointer;
   top: 80px;
-  left: 4px;
+  left: 210px;
   width: 40px;
   height: 40px;
 }
-#farm-history26 {
+#tasting-room28 {
   position: absolute;
   display: block;
   cursor: pointer;
-  top: 130px;
-  left: 160px;
-  width: 40px;
-  height: 40px;
-}
-#tasting-room27 {
-  position: absolute;
-  display: block;
-  cursor: pointer;
-  top: 345px;
-  left: 350px;
+  bottom: 110px;
+  right: 310px;
   width: 40px;
   height: 40px;  
 }
+#pond {
+  background-color: rgb(87, 87, 215);
+  position: absolute;
+  border-radius: 35px;
+  z-index: 1;
+    top: 150px;
+    left: 240px;
+    width: 70px;
+    height: 90px;
+    transform: rotate(-23deg);
+}
+#logo {
+  position: absolute;
+  background-image: url('https://storage.googleapis.com/cdn.vinoshipper.com/winery/473/311dac8d-98a5-484e-97f0-e16afad94ac1.jpg');
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px;
+  z-index: 1;
+    width: 100px;
+    height: 125px;
+    bottom: 15px;
+    right: 10px;
+}
+  #logo::after {
+    content: 'Interactive Map';
+    color: rgba(236, 232, 232, 0.9);
+    background-color: black;
+    position: relative;
+    font-size: 9px;
+    font-family: serif;
+    letter-spacing: 2px;
+      top: 101px;
+      left: 2px;
+      width: 100px;
+      height: 10px;
+  }
 
+@media only screen and (max-width: 599px) {
+  #range {
+    display: none;
+  }
+  #tooSmall {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  #range {
+    transform: scale(1.5);
+    margin-top: 150px;
+  }
+}
 
